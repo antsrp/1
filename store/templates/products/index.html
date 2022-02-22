@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Store{% endblock %}
+{% block content %}
+{% if product_list %}
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        {% for p in product_list %}
+        <tr>
+        <td><a href="/store/{{ p.id }}/purchase/">{{ p.name }}</a></td>
+        <td>{{ p.price }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No products are available at this moment.</p>
+{% endif %}
+{% endblock %}
