@@ -1,6 +1,6 @@
 # ais1
 
-** Execution **
+**Execution**
 
 ```
 python manage.py runserver
