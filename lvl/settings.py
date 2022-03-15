@@ -15,7 +15,7 @@ from pathlib import Path
 from django.urls import reverse_lazy
 
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
-LOGIN_URL = reverse_lazy('login')
+LOGIN_URL = reverse_lazy('signin')
 LOGOUT_URL = reverse_lazy('logout')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +31,18 @@ SECRET_KEY = 'django-insecure-)8@u=wm8mzt8=u@79*6ed8qiq=3g^mz0dhanyadk9&)e6=p6!y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+
+
+#ALLOWED_HOSTS = ['*']
+# CORS_ORIGIN_ALLOW_ALL = True
+
+ALLOWED_HOSTS = ['localhost']
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost',
+)
 
 
 # Application definition
@@ -44,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'lvl.urls'
