@@ -2,10 +2,10 @@
 {% block title %}Log-in{% endblock %}
 {% block content %}
     <h1>Log-in</h1>
-    <p>Please, use the following form to log-in:</p>
+    <p>Please, use the following form to login:</p>
     <form action="." method="post" class="form-inline">
         {{ form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Log-in" class="btn btn-outline-success my-2 my-sm-0"></p>
+        <p><input type="submit" value="Login" class="btn btn-outline-success my-2 my-sm-0"></p>
     </form>
 {% endblock %}
